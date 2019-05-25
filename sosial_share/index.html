@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4c150;
+            overflow: hidden;
+        }   
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-size: 14px;
+            font-family: tahoma;
+            text-align: justify;
+            line-height: 1.5rem;
+        }
+
+        article {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 300px;
+            background: #eee;
+            padding: 1rem;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .share {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 0 10px 0 10px;
+            background: #34495e;
+            cursor: pointer;
+        }
+
+        .share:hover {
+            animation: glow 5s infinite;
+        }
+
+        .share .fa-share-alt {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 40px;
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            color: #ccc;
+            background: #34495e;
+        }
+
+        .share .social {
+            opacity: 1;
+            position: absolute;
+            top: -200%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 99;
+        }
+
+        .share .social .fa {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 100%;
+            background: #34495e;
+        }
+
+        .share .social .fa.fa-facebook {
+            background: #ccc;
+            color: #000;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+            transition: all 0.4s ease;
+        }
+
+        .share .social .fa.fa-facebook.shared {
+            background: #3d3fc4;
+            color: white;
+            border: 2px solid white;
+            box-sizing: border-box;
+            transition: all 0.4s ease;
+        }
+
+        .share .social .fa.fa-instagram {
+            background: #ccc;
+            color: #000;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+            transition: all 0.4s ease;
+        }
+
+        .share .social .fa.fa-instagram.shared {
+            background: #ff19f391;
+            color: white;
+            border: 2px solid white;
+            box-sizing: border-box;
+            transition: all 0.4s ease;
+        }
+        .share .social .fa.fa-github {
+            background: #ccc;
+            color: #000;
+            border: 2px solid transparent;
+            box-sizing: border-box;
+            transition: all 0.4s ease;
+        }
+        
+        .share .social .fa.fa-github.shared {
+            background: black;
+            color: white;
+            border: 2px solid white;
+            box-sizing: border-box;
+            transition: all 0.4s ease;
+        }
+
+        .share .social .fa.fa-close:hover {
+            background: #f4c150;
+            color: white;
+            transition: all 0.4s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <article>
+        <div class="share">
+            <div class="fa fa-share-alt"></div>
+            <div class="social">
+                <div class="fa fa-facebook"></div>
+                <div class="fa fa-instagram"></div>
+                <div class="fa fa-github"></div>
+                <div class="fa fa-close"></div>
+            </div>  
+        </div>
+        <h2>LOREM IPSUM</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo laudantium beatae rem consectetur ut fugit quisquam iure incidunt dolore, perspiciatis obcaecati et porro cum harum? Odio laboriosam cum dolorum perspiciatis.</p>
+
+    </article>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script>
+    $(".fa-share-alt").click(function(){
+        $(".share").animate({
+            width: "400px",
+            height: "300px"
+        }, 400, function() {
+            $(".fa-share-alt").animate({
+                opacity: 0
+            }, 400, function(){
+                $(".social").animate({
+                    top: "50%",
+                    opacity: 1,
+                    easing: "ease-in"
+                }, 1000)
+            })
+        });
+    })
+
+    $(".fa-facebook").click(function(){
+        $(this).toggleClass("shared");
+    })
+    $(".fa-instagram").click(function(){
+        $(this).toggleClass("shared");
+    })
+    $(".fa-github").click(function(){
+        $(this).toggleClass("shared");
+    })
+    $(".fa-close").click(function(){
+        $(".social").animate({
+            top: "-250%",
+            opacity:0,
+            easing: "ease-out"
+        }, 500, function(){
+            $(".share").animate({
+                width: "40px",
+                height: "40px"
+            }, 400, function(){
+                $(".fa-share-alt").animate({
+                    opacity: 1
+                }, 400)
+            })
+        });
+    });
+    </script>
+</body>
+</html>

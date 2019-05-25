@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-image: url(r.jpg);
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            font-family: tahoma;
+            font-weight: 400;
+            height: 85vh;
+        }
+
+        nav .menu {
+            margin-top: 160px;
+            text-align: center;
+            margin-left: -37px;
+        }
+
+        nav .menu ul {
+            list-style: none;
+            display: inline-block;
+        }
+
+        nav .menu ul li {
+            float: left;
+            width: 124px;
+            height: 140px;
+            border-left: 1px solid #e3e3e3;
+            background-color: white;
+            transition: background_color 0.2s linear 0s;
+        }
+
+        nav .menu ul li:last-child {
+            border-right: 1px solid #e3e3e3;
+        }
+
+        nav .menu ul li a {
+            display: table;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .clear:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        nav .menu a i {
+            display: block;
+            vertical-align: middle;
+            color: #333;
+            font-size: 23px;
+            transform: all 0.2s linear 0s;
+            padding: 44px 0 10px;
+        }
+
+        nav .menu a i:before {
+            border: 2px solid #333;
+            border-radius: 500px;
+            width: 33px;
+            height: 33px;
+            display: inline-block;
+            line-height: 37px;
+            transition: color 0.2s linear 0s, font-size 0.2s linear 0s, border-color 0.2s linear 0.2s, height 0.2s linear 0s, line-height 0.2s linear 0s;
+        }
+
+        nav .menu a .link-text {
+            right: 45px;
+            color: #333;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: all 0.2s linear 0s;
+        }
+
+        nav .menu ul li:hover {
+            background-color: #ffea00;
+            border-color: #ffea00;
+        }
+
+        nav .menu ul li:hover+li {
+            border-color: #ffea00;
+        }
+
+        nav .menu ul li:hover+li:last-child {
+            border-right-color: #e3e3e3;
+        }
+
+        nav .menu ul li:hover .link-text {
+            opacity: 0;
+        }
+
+        nav .menu ul li:hover i {
+            color: #333;
+            font-size: 43px;
+        }
+
+        nav .menu ul li:hover i:before {
+            border-color: transparent;
+            border-radius: 500px;
+            width: 52px;
+            height: 52px;
+            line-height: 40px;
+            transition: color 0.2s linear 0s, font-size 0.2s linear 0s, border-color 0.2s linear 0.2s, height 0.2s linear 0s, line-height 0.2s linear 0s;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="menu">
+            <ul class="clear">
+                <li>
+                    <a href="" title="home">
+                        <i class="fa fa-home"></i>
+                        <span class="link-text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="profession">
+                        <i class="fa fa-camera"></i>
+                        <span class="link-text">Profession</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="portfolio">
+                        <i class="fa fa-pencil"></i>
+                        <span class="link-text">Portfolio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="services">
+                        <i class="fa fa-comment"></i>
+                        <span class="link-text">Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" title="contact">
+                        <i class="fa fa-envelope"></i>
+                        <span class="link-text">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/1.5.2/raphael-min.js"></script>
+    <style>
+        body {
+            background-image: url(img/21.jpg);
+        }
+
+        .wrapper {
+            margin: 178px auto 0;
+            width: 840px;
+        }
+
+        ul.reset,
+        ul.reset li {
+            display: block;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .gallery ul li {
+            width: 200px;
+            height: 200px;
+            margin: 0 10px 10px 0;
+            float: left;
+            position: relative;
+        }
+
+        a img {
+            border: none;
+
+        }
+
+        .holder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: -100px 0 0 -100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="gallery">
+            <ul class="reset">
+                <li><img src="img/1.png"></li>
+                <li><img src="img/2.png"></li>
+                <li><img src="img/3.png"></li>
+                <li><img src="img/4.png"></li>
+                <li><img src="img/5.png"></li>
+                <li><img src="img/6.png"></li>
+                <li><img src="img/7.png"></li>
+                <li><img src="img/8.png"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            var li = $('.gallery').find('li');
+            li.each(function (i) {
+                var t = $(this),
+                    img = t.find('img'),
+                    src = img.attr('src'),
+                    width = li.width(),
+                    height = li.height();
+
+                img.hide().after($('<div />').attr('id', 'holder' + i).addClass('holder'));
+                var r = Raphael('holder' + i, width * 2, height * 2),
+                    rimg = r.image(src, width / 2, height / 2, width, height);
+
+                rimg.hover(function (event) {
+                    this.animate({
+                        scale: 2,
+                        rotation: 359
+                    }, 1200, 'elastic');
+                });
+            });
+
+            li.hover(function () {
+                li.css({
+                    'z-index': 1
+                });
+                $(this).css({
+                    'z-index': 2
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
