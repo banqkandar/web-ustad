@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fixed Navigation bar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: tahoma;
+            text-align: center;
+            height: 1280px;
+        }
+
+        .container,
+        .sticky {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        ul {
+            padding: 15px;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 32px 0 0;
+        }
+
+        li:last-child {
+            margin: 0;
+        }
+
+        a {
+            color: black;
+            font-size: 24px;
+            letter-spacing: 1px;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: tahoma;
+        }
+
+        a:before {
+            background-color: #000;
+            content: "";
+            height: 7px;
+            position: absolute;
+            top: 32px;
+            left: 20px;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out 0s;
+            min-width: 20px;
+            width: 49%;
+        }
+
+        a:hover:before {
+            visibility: visible;
+            transform: scaleY(1);
+        }
+
+        h1 {
+            background: url(logo.png) no-repeat;
+            height: 128px;
+            width: 128px;
+            text-indent: 9999px;
+            overflow: hidden;
+            margin: 12px auto;
+            border: 8px solid #158cdf;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        h2 {
+            position: relative;
+            margin: 0 0 2em 0;
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 1px;
+            background: #158cdf;
+            padding: 10px 15px;
+        }
+
+        h2:before {
+            content: "";
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid #000;
+            animation: bounce .8s linear infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(0, 7px);
+            }
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 24px;
+            text-align: justify;
+            color: #333;
+        }
+
+        .row {
+            width: 1170px;
+            margin: 0 auto;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            background: #158cdf;
+            color: black;
+            box-shadow: 0 7px 12px -7px #1d1f20;
+            transition: all 0.2s ease-in 0s;
+            z-index: 9999;
+        }
+
+        .ease-out {
+            transition: all 0.2s ease-out 0s;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1><a href="">Home</a></h1>
+            <nav id="navigation" role="navigation">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Work</a></li>
+                    <li><a href="">News</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <article>
+                <h2>SCROLL DOWN TO SEE THE MAGIC</h2>
+                <p class="row">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit vero dolorem iusto officiis? Ullam
+                    mollitia ea sapiente cum aperiam accusamus eius nihil eos laborum officiis at nam itaque numquam
+                    ipsam deserunt enim exercitationem tenetur illum, vitae voluptatibus! Fugiat, veniam atque
+                    consectetur consequuntur tempora quas laborum illo, voluptate architecto dolore, ullam enim sit!
+                    Porro quasi facilis excepturi aut adipisci pariatur reiciendis, accusamus eos, corporis voluptatem
+                    atque possimus ab nostrum nemo. Exercitationem neque suscipit quaerat quasi facilis consequuntur,
+                    mollitia repellendus quia cum ratione eligendi iusto? Fugit unde mollitia voluptates quasi
+                    repellendus distinctio et harum non veritatis ab nam consequuntur earum beatae similique debitis
+                    facere dicta in libero consequatur deserunt, cupiditate hic. Et earum voluptas, minus quia obcaecati
+                    iusto culpa cupiditate, aspernatur voluptatum, eos enim voluptatem labore fuga totam a aperiam
+                    laborum tempora sunt rerum sint repellat sed vero nostrum odit. Similique architecto animi laborum
+                    distinctio facere odit suscipit asperiores? Modi iure accusamus laborum doloribus, pariatur
+                    voluptates vero. Quas aut veniam vel consectetur eaque id aspernatur, sapiente quam animi voluptatem
+                    est exercitationem illo quidem facere deserunt repellendus rem alias commodi velit, dolorum eius
+                    incidunt porro, sit doloremque? Quis quibusdam aliquid nihil expedita at et dicta sit adipisci. Amet
+                    expedita quos quia, ducimus, reprehenderit doloribus aliquam veritatis doloremque aspernatur fugit
+                    ratione deserunt dolorem a nemo minus eum sapiente harum commodi adipisci. Fuga, minima. Nobis
+                    distinctio dignissimos praesentium obcaecati culpa reiciendis. Deleniti, vel vero! Doloremque ullam
+                    sapiente, enim porro numquam adipisci corporis magni velit odio odit hic, doloribus explicabo ex
+                    aspernatur sunt reiciendis neque officiis nulla consequuntur et itaque. Vel aliquam nostrum quae
+                    maxime iure reiciendis repudiandae, possimus soluta voluptates laboriosam, fugit tempora, quis ullam
+                    aut veritatis ipsum excepturi fuga quas ipsam incidunt beatae? Deserunt error, quos totam laudantium
+                    aliquid optio quo natus dolore officiis pariatur dolor nemo harum mollitia. Eius, quae. Molestias,
+                    assumenda ut?
+                </p>
+                <p class="row">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, blanditiis minima? Eligendi
+                    perspiciatis quos facilis doloremque cupiditate voluptas ratione provident optio harum magnam. Non
+                    tempora beatae iure ratione similique labore consequatur, odio nobis inventore assumenda porro culpa
+                    soluta error quod, consequuntur a reprehenderit rem magnam. Nam velit facere at eos necessitatibus
+                    debitis atque laborum hic fuga, dolore mollitia architecto, reprehenderit voluptates aut, quidem
+                    aliquam culpa. Id, harum, laboriosam corporis modi, corrupti numquam quaerat praesentium expedita
+                    tempora cupiditate provident aliquid aliquam aperiam sed inventore quis architecto impedit dolore
+                    quae in mollitia voluptatum natus voluptatem cum. Veritatis assumenda deserunt praesentium tempora
+                    quod modi atque delectus at aspernatur perferendis. Repellat aperiam officiis, dignissimos eligendi
+                    nemo laboriosam ea ipsum quae ipsa illo at voluptatem perspiciatis soluta praesentium laborum amet
+                    quam. Doloribus unde voluptate nam incidunt similique ut nisi quibusdam dignissimos modi soluta
+                    quod, neque laborum a quas magnam quae atque consequatur perferendis nulla tenetur voluptatum
+                    voluptas consectetur iste est. Molestiae suscipit quasi inventore dolore? Adipisci dicta laboriosam
+                    sunt repellat nihil accusamus! Quisquam minima modi nemo deserunt reprehenderit, quaerat rerum omnis
+                    officia perferendis veniam consequuntur, facere quas illum. Voluptatum aut, temporibus nobis sint
+                    qui consequatur officiis. Porro explicabo maxime nam ullam expedita aspernatur eius sint doloribus,
+                    tempore iure perferendis! Nemo maxime iure explicabo, esse eligendi voluptatem? Voluptatum, sit iste
+                    doloribus cum repellat dolor dolore natus necessitatibus quisquam, reiciendis amet error molestiae.
+                    Soluta sed nisi voluptas sapiente nam debitis, rem vitae voluptatum assumenda corrupti corporis
+                    deleniti sit molestiae repudiandae molestias, quia harum suscipit aliquam autem iste! Assumenda a
+                    sit consequuntur aut distinctio architecto suscipit esse qui cum tempora porro tenetur excepturi
+                    molestias, accusantium animi harum! Rerum tempora, animi non laborum, ullam et fugit nobis
+                    voluptatum consequatur doloribus numquam ipsam omnis. Illum placeat aliquid expedita voluptates
+                    ipsum optio? Optio labore molestiae, exercitationem laudantium asperiores praesentium numquam
+                    suscipit!
+                </p>
+            </article>
+        </section>
+    </main>
+    <script>
+        var nav = document.getElementById("navigation"),
+            stop = navigation.offsetTop - 0,
+            docBody = document.documentElement ||
+            document.body.parentNode ||
+            document.body,
+            hasOffset = window.pageYOffset !== undefined,
+            scrollTOp;
+
+        window.onscroll = function (e) {
+            scrollTOp = hasOffset ? window.pageYOffset : docBody.scrollTOp;
+
+            if (scrollTOp >= stop) {
+                navigation.className = 'sticky';
+            } else {
+                navigation.className = 'ease-out';
+            }
+        }
+    </script>
+</body>
+
+</html>
