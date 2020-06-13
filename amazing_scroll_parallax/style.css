@@ -1,0 +1,27 @@
+body {
+    background-color: #1b1b1b;
+    font-family: tahoma;
+    color: #f2f2f2;
+    overflow-x: hidden;
+}
+
+.info .img-wrapper {
+    position: relative;
+}
+
+.info .img-wrapper .absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.info .max-vh-80 {
+    max-height: 80vh;
+}
+
+p {
+    width: 100%;
+    font-family: tahoma;
+    
+}

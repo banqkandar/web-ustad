@@ -1,0 +1,19 @@
+body {
+    font-weight: bold;
+    background-color: #1b1b1b;
+    font-family: tahoma;
+    color: #f2f2f2;
+    overflow-x: hidden;
+    height: 1310px;
+}
+
+.specs .img-wrapper {
+    position: relative;
+}
+
+.specs .img-wrapper .absolute {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    z-index: -1;
+}

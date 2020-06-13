@@ -1,0 +1,68 @@
+/* Reset */
+body {
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Hero */
+.hero {
+	position: relative;
+	height: 500px;
+	color: #fff;
+	background-color: #1B3FA3;
+}
+
+.hero::after {
+	content: ' ';
+	position: absolute;
+	bottom: -250px;
+	height: 250px;
+	width: 100%;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231B3FA3' fill-opacity='1' d='M0,0L60,48C120,96,240,192,360,229.3C480,267,600,245,720,202.7C840,160,960,96,1080,90.7C1200,85,1320,139,1380,165.3L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+	background-size: 100%;
+}
+
+.hero .container {
+	/* kode ini membuat posisi teks menjadi di tengah */
+	display: flex; 
+	align-items: center;
+	/* end */
+
+	padding: 40px 0;
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.hero .col {
+	width: 50%;
+}
+
+.hero .col.center {
+	text-align: center;
+}
+
+.hero h1 {
+	margin: 0;
+	font-size: 36px;
+}
+
+.hero p {
+	margin-top: 10px;
+	color: rgba(255,255,255,.6);
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 36px;
+}
+
+.hero .button {
+	display: inline-block;
+	margin-top: 15px;
+	padding: 15px 30px;
+	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	background-color: #e23939;
+	border-radius: 5px;
+}
